@@ -1,0 +1,111 @@
+
+:root {
+      --primary-color: #0e6870;
+}
+
+body{
+font-family: Poppins;
+background: url('https://www.muchbetteradventures.com/magazine/content/images/size/w2000/2019/10/29122602/iStock-971053374.jpg') center/cover no-repeat;
+background-size: cover;
+overflow: hidden;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+}
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.form-container {
+padding: 50px;
+border-radius: 10px;
+box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+margin: 10px;
+width: 350px; /* Adjust the width as per your preference */
+height: 60%;
+backdrop-filter: blur(8px);
+}
+
+h2 {
+text-align: center;
+color: var(--primary-color);
+font-weight: bold;
+margin-bottom: 20px;
+font-size: 2rem;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+color: var(--primary-color);
+font-weight: bold;
+}
+
+input[type="text"],
+input[type="text"],
+input[type="password"] {
+width: 100%;
+padding: 13px 10px;
+border: none;
+border-radius: 3px;
+font-weight: bold;
+font-size: 1rem;
+color: var(--primary-color);
+box-sizing: border-box;
+background: none;
+border-bottom: 2px solid var(--primary-color);
+}
+
+input::placeholder{
+color: white;
+font-size: 1rem;
+}
+
+input:focus{
+outline: none;
+}
+
+button[type="submit"] {
+background-color: var(--primary-color);
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+width: 100%;
+font-weight: bold;
+font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+background-color: #07464b;
+}
+
+button:focus {
+outline:none;
+}
+span{
+color: #fff;
+}
+span a{
+font-weight: bolder;
+text-decoration: none;
+color: var(--primary-color);
+}
+
+.error-message, .logout-message {
+background-color: #5e057e;
+color: #fff;
+padding: 10px;
+border-radius: 3px;
+text-align: center;
+}
+
+
+
