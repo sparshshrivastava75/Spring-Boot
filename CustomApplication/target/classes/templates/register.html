@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- <link rel="stylesheet" href="/register.css"> -->
+<meta charset="ISO-8859-1">
+<title>Register</title>
+  <style>
+  :root {
+    --primary-color: #0e6870;
+   }
+body{
+     font-family: Poppins;
+     background: url('https://www.muchbetteradventures.com/magazine/content/images/size/w2000/2019/10/29122602/iStock-971053374.jpg') center/cover no-repeat;
+     background-size: cover;
+     overflow: hidden;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 350px; /* Adjust the width as per your preference */
+  backdrop-filter: blur(8px);
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color:var(--primary-color);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 13px 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  font-weight: bold;
+  font-size: 1rem;
+  background: none;
+  color: var(--primary-color);
+}
+
+input:focus, button:focus{
+    outline: none;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #07464b;
+}
+
+span{
+    color: #fff;
+}
+span a{
+    font-weight: bolder;
+    text-decoration: none;
+    color: #fff;
+}
+.success-message {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+
+  
+  
+  </style> 
+</head>
+<body>
+
+ <div class="container">
+    <div class="form-container">
+   
+
+       <div th:if="${param.success}">
+        <div class="success-message">
+  <p>Registration Successful!</p>
+</div>
+       </div>
+    
+      <h2>Registration</h2>
+      <form
+         method="post"
+         role="form"
+         th:action="@{/register}"
+         th:object="${user}"
+      
+      
+      >
+        <div class="form-group">
+          <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input th:field="*{username}" type="text" id="username" name="username" placeholder="Username" required>
+          <span th:if="${userexist}" style="color: red;">Username is Taken</span>
+        </div>
+        <div class="form-group">
+          <input th:field="*{password}" type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <span> Already Registered? <a th:href="@{/login}">Login</a></span>
+    </div>
+  </div>
+
+</body>
+</html>

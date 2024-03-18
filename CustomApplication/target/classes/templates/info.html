@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #06a8de;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to Our Info Dashboard</h1>
+<div class="container">
+    <div class="card" style="background-color:rgb(255, 69, 128) ;">
+        <h2>Employee Details</h2>
+        <!-- <p>This is the content for Section 1.</p> -->
+    </div>
+    <div class="card" style="background-color: rgb(125, 68, 216);">
+        <h2>Projects</h2>
+        <!-- <p>This is the content for Section 2.</p> -->
+    </div>
+    <div class="card" style="background-color:rgb(155, 205, 81) ;">
+        <h2>Calender</h2>
+        <!-- <p>This is the content for Section 3.</p> -->
+    </div>
+    <div class="card" style="background-color:rgb(248, 183, 43) ;">
+        <h2>Account</h2>
+        <!-- <p>This is the content for Section 4.</p> -->
+    </div>
+    <div class="card" style="background-color: #ff70ff;">
+        <h2>Manager</h2>
+        <!-- <p>This is the content for Section 2.</p> -->
+    </div>
+    <div class="card" style="background-color: rgb(161, 29, 29) ;">
+        <h2>information</h2>
+        <!-- <p>This is the content for Section 3.</p> -->
+    </div>
+    <div class="card" style="background-color:rgb(87, 248, 248) ;">
+        <h2>Admin</h2>
+        <!-- <p>This is the content for Section 4.</p> -->
+    </div>
+</div>
+<a th:href="@{/home}">Back</a>
+</body>
+</html>

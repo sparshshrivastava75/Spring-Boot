@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Performance Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chart-container {
+            margin-top: 20px;
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Performance Dashboard</h1>
+    
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="lineChart"></canvas>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <script>
+        // Sample data for the charts
+        const  lineChartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','November','December'],
+            datasets: [{
+                label: 'Performance',
+                data: [12, 20, 40, 85,120,125,140,120,110,140,105,150],
+                backgroundColor: ['rgba(245, 40, 145, 0.8)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(75, 192, 192, 0.5)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        const barChartData = {
+            labels: ['Sales', 'HR', 'Management', 'Testing', 'Development', 'Maintenance', 'Executives'],
+            datasets: [{
+                label: 'Performance Trend',
+                data: [18, 50, 65, 35, 45, 90, 115],
+                fill: false,
+                borderColor: 'rgb(252, 3, 152)',
+                tension: 0.1
+            }]
+        };
+
+        const pieChartData = {
+            labels: ['Excellent', 'Good', 'Average', 'Poor'],
+            datasets: [{
+                data: [20, 30, 40, 10],
+                backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 206, 86, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        // Create the bar chart
+        var barChartCtx = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(barChartCtx, {
+            type: 'bar',
+            data: barChartData
+        });
+
+        // Create the line chart
+        var lineChartCtx = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(lineChartCtx, {
+            type: 'line',
+            data: lineChartData
+        });
+
+        // Create the pie chart
+        var pieChartCtx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(pieChartCtx, {
+            type: 'pie',
+            data: pieChartData
+        });
+    </script>
+</body>
+</html>

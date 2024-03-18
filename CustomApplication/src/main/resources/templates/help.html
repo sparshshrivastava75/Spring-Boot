@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary-color: #f3395c;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            font-family: Poppins;
+            /* background-color: lightblue; */
+        }
+
+        body h1 {
+            text-align: center;
+        }
+        .dashboard {
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.dashboard__title {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.dashboard__user {
+    margin-top: 0;
+    line-height: 0px;
+}
+
+.dashboard__user-name {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: 0;
+    display: inline-block;
+}
+
+
+.site-navigation ul,
+.site-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+    cursor: pointer;
+}
+
+a span {
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px;
+    display: inline-block;
+    width: max-content;
+    background: skyblue;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity .1s linear .5s;
+}
+
+li:hover a>span {
+    opacity: 1;
+}
+
+li:hover li a>box-icon {
+    color: rgb(128, 124, 124);
+}
+
+    </style>
+</head>
+<header class="site-header">
+    <div class="site-identity">
+        <h1><a href="/"> <img src="/eva.png"></h1>
+      </div>
+    <nav class="site-navigation">
+      <ul class="nav">
+        <li><a th:href="@{/home}"><box-icon type='solid' name='home'></box-icon><span>Home</span></a></li>
+        <li><a th:href="@{/Contact}"><box-icon name='group' type='solid'></box-icon><span>About Us</span></a></li>
+        <li><a th:href="@{/employee_form}"><box-icon type='solid' name='envelope'></box-icon><span>Contact Us</span></a>
+        </li>
+        <li><a th:href="@{/info}"><box-icon type='solid' name='info-circle'></box-icon><span>Info.</span></a></li>
+        <li><a th:href="@{/list_employees}"><box-icon type='solid' name='data'></box-icon><span>DataBase</span></a></li>
+        <li><a th:href="@{/help}"><box-icon type='solid' name='help-circle'></box-icon><span>Help</span></a></li>
+        <!-- <div class="dropdown">
+          <button class="dropbtn"><box-icon type='solid' name='user-circle'></box-icon></button>
+          <div class="dropdown-content">
+            <a href="/list_employees">Edit Profile</a>
+            <a href="#">Apply</a>
+            <a th:href="@{/logout}" class="logout">Logout<i class="logout ri-logout-box-r-line"></i></a>
+          </div> -->
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+    <h1>HELP DESK</h1>
+
+    <h4><b>
+        Welcome to Our Help Page</b>
+
+        At Our Organisation, we are committed to providing you with the best possible experience.
+        Our Help Page is designed to assist you in navigating through any questions or concerns you
+        may have.Whether you're a new user or a seasoned veteran, we're here to ensure that your experience
+        with us is smooth and enjoyable.
+
+        <h3>(Frequently Asked Questions)</h3>
+
+        Our FAQs section addresses common queries that users often encounter. Here, you'll find
+        answers to questions ranging from account management to troubleshooting technical issues.
+        If you have a question, chances are you'll find the answer here.
+        <h3>Getting Started</h3>
+
+        New to our Organisation? No problem. Our Getting Started section is tailored specifically for you.
+        Learn how to create an account, navigate our platform, and make the most out of our services.
+        We'll guide you through the initial steps so you can dive in with confidence.
+        <h3>Account Management</h3>
+        <details>
+            <summary>Click to Expand</summary>
+            <p>This is some hidden content that will be revealed when you click the summary.</p>
+        </details>
+        Need to update your personal information or change your password? Our Account Management section provides
+        step-by-step instructions on how to manage your account effectively. Whether you're updating your billing
+        details or modifying your notification preferences, we've got you covered.
+        <h3>Technical Support</h3>
+
+        Encountering a technical issue? Our dedicated Technical Support team is here to help.
+        Submit a support ticket through our platform, and our experts will promptly assist you in
+        resolving any technical challenges you may face. We're committed to ensuring that your experience is
+        seamless.
+
+        <h3>Privacy and Security</h3>
+
+        At our Organisation, we take your privacy and security seriously. Our Privacy and Security section
+        outlines our commitment to protecting your personal information and provides insights into the measures
+        we've implemented to safeguard your data. Your trust is paramount to us.
+
+        <h3>Contact Us</h3>
+
+        Still have questions or concerns? Don't hesitate to reach out to us directly. Our Contact Us page
+        provides various channels through which you can get in touch with our support team.
+        Whether you prefer email, phone, or live chat, we're here to provide you with the assistance you need.
+
+        <h3>Feedback</h3>
+
+        We value your feedback. If you have suggestions for improvement or would like to share your experience with
+        us, please feel free to do so. Your feedback helps us continually enhance our services to better serve you.
+        Thank you for choosing [Company Name]. We're here to support you every step of the way.
+    </h4>
+    <a th:href="@{/home}">Back</a>
+
+</body>
+
+</html>
